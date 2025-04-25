@@ -6,7 +6,7 @@ public class EventoGenerico extends Evento {
 	private String tipo;
 	private String publicoObjetivo;
 	private boolean requiereInscripcion;
-	
+
 	// CONSTRUCTORES
 
 	public EventoGenerico() {
@@ -16,16 +16,16 @@ public class EventoGenerico extends Evento {
 		this.requiereInscripcion = false;
 	}
 
-	public EventoGenerico(Personal organizador, LocalDate fechaInicio, LocalDate fechaFin, String tema, String tipo,
-			String publicoObjetivo, boolean requiereInscripcion) {
-		super(organizador, fechaInicio, fechaFin, tema);
+	public EventoGenerico(String nombre, Empleado organizador, LocalDate fechaInicio, LocalDate fechaFin, String tema,
+			Museo museo, String tipo, String publicoObjetivo, boolean requiereInscripcion) {
+		super(nombre, organizador, fechaInicio, fechaFin, tema, museo);
 		this.tipo = tipo;
 		this.publicoObjetivo = publicoObjetivo;
 		this.requiereInscripcion = requiereInscripcion;
 	}
 
 	// GETTERS Y SETTERS
-	
+
 	public String getTipo() {
 		return tipo;
 	}
@@ -51,7 +51,7 @@ public class EventoGenerico extends Evento {
 	}
 
 	// ToSTRING
-	
+
 	@Override
 	public String toString() {
 		return "EventoGenerico: \ntipo: " + tipo + ", publicoObjetivo: " + publicoObjetivo + ", requiereInscripcion: "

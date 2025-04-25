@@ -325,41 +325,42 @@ public class GesionMuseo {
 			}
 		}
 	}
-	
+
 	// ALTA EVENTO GENERICO
-		public void altaEventoGenerico(String nombre, Empleado organizador, LocalDate fechaInicio, LocalDate fechaFin, String tema,
-				Museo museo, String tipo, String publicoObjetivo, boolean requiereInscripcion) {
-			EventoGenerico nuevoEventoGenerico = new EventoGenerico(nombre, organizador, fechaInicio, fechaFin, tema, museo,  tipo,  publicoObjetivo, requiereInscripcion);
-			listaEventosGenericos.add(nuevoEventoGenerico);
-		}
+	public void altaEventoGenerico(String nombre, Empleado organizador, LocalDate fechaInicio, LocalDate fechaFin,
+			String tema, Museo museo, String tipo, String publicoObjetivo, boolean requiereInscripcion) {
+		EventoGenerico nuevoEventoGenerico = new EventoGenerico(nombre, organizador, fechaInicio, fechaFin, tema, museo,
+				tipo, publicoObjetivo, requiereInscripcion);
+		listaEventosGenericos.add(nuevoEventoGenerico);
+	}
 
-		// LISTAR EVENTOS GENERICOS
-		public void listarEventosGenericos() {
-			for (EventoGenerico eventoGenerico : listaEventosGenericos) {
-				if (eventoGenerico != null) {
-					System.out.println(eventoGenerico);
-				}
+	// LISTAR EVENTOS GENERICOS
+	public void listarEventosGenericos() {
+		for (EventoGenerico eventoGenerico : listaEventosGenericos) {
+			if (eventoGenerico != null) {
+				System.out.println(eventoGenerico);
 			}
 		}
+	}
 
-		// BUSCAR EVENTO GENERICO
-		public EventoGenerico buscarEventoGenerico(String nombre) {
-			for (EventoGenerico eventoGenerico : listaEventosGenericos) {
-				if (eventoGenerico != null && eventoGenerico.getNombre().equalsIgnoreCase(nombre)) {
-					return eventoGenerico;
-				}
-			}
-			return null;
-		}
-
-		// ELIMINAR EVENTO GENERICO
-		public void eliminarEventoGenerico(String nombre) {
-			Iterator<EventoGenerico> iteradorEventosGenericos = listaEventosGenericos.iterator();
-			while (iteradorEventosGenericos.hasNext()) {
-				EventoGenerico eventoGenerico = iteradorEventosGenericos.next();
-				if (eventoGenerico.getNombre().equalsIgnoreCase(nombre)) {
-					iteradorEventosGenericos.remove();
-				}
+	// BUSCAR EVENTO GENERICO
+	public EventoGenerico buscarEventoGenerico(String nombre) {
+		for (EventoGenerico eventoGenerico : listaEventosGenericos) {
+			if (eventoGenerico != null && eventoGenerico.getNombre().equalsIgnoreCase(nombre)) {
+				return eventoGenerico;
 			}
 		}
+		return null;
+	}
+
+	// ELIMINAR EVENTO GENERICO
+	public void eliminarEventoGenerico(String nombre) {
+		Iterator<EventoGenerico> iteradorEventosGenericos = listaEventosGenericos.iterator();
+		while (iteradorEventosGenericos.hasNext()) {
+			EventoGenerico eventoGenerico = iteradorEventosGenericos.next();
+			if (eventoGenerico.getNombre().equalsIgnoreCase(nombre)) {
+				iteradorEventosGenericos.remove();
+			}
+		}
+	}
 }

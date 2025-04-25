@@ -1,6 +1,7 @@
 package clases;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Evento {
 	private String nombre;
@@ -84,8 +85,26 @@ public class Evento {
 
 	@Override
 	public String toString() {
-		return "Evento: \nnombre: "+nombre+", organizador: " + organizador + ", fechaInicio: " + fechaInicio + ", fechaFin: " + fechaFin
-				+ ", tema: " + tema + ", museo: " + museo;
+		return "Evento: \nnombre: " + nombre + ", organizador: " + organizador + ", fechaInicio: " + fechaInicio
+				+ ", fechaFin: " + fechaFin + ", tema: " + tema + ", museo: " + museo;
 	}
 
+	// METODOS PROPIOS
+
+	public void estadoEvento() {
+		LocalDate hoy = LocalDate.now();
+		if (fechaInicio.isAfter(hoy)) {
+			System.out.println("El evento comienza dentro de " + ChronoUnit.DAYS.between(hoy, fechaInicio) + " días.");
+		} else if (fechaFin.isBefore(hoy)) {
+			System.out.println("El evento terminó hace " + ChronoUnit.DAYS.between(fechaFin, hoy) + "días");
+		} else {
+			System.out.println("El evento comenzó hace " + ChronoUnit.DAYS.between(fechaInicio, hoy)
+					+ " días y terminará en " + ChronoUnit.DAYS.between(hoy, fechaFin)+" días");
+		}
+	}
+	
+	public int duracionEvento() {
+		int duracion=(int) (ChronoUnit.DAYS.between(fechaInicio, fechaFin) + 1);
+		return duracion;
+	}
 }

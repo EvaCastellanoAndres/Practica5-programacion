@@ -58,4 +58,18 @@ public class EventoBenefico extends Evento {
 				+ totalRecaudado + "\n" + super.toString();
 	}
 
+	// METODOS PROPIOS
+	
+	public void añadirDonacion(double cantidad) {
+		this.totalRecaudado += cantidad;
+	}
+
+	public boolean metaAlcanzada() {
+		if (this.totalRecaudado >= this.metaRecaudacion) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

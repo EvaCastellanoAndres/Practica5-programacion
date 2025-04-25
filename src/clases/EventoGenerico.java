@@ -58,4 +58,25 @@ public class EventoGenerico extends Evento {
 				+ requiereInscripcion + "\n" + super.toString();
 	}
 
+	// METODOS PROPIOS
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 }

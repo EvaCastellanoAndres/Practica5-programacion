@@ -49,7 +49,7 @@ public class Museo {
 	
 	@Override
 	public String toString() {
-		return "MUSEO " + nombre + ": \naforo:" + aforo + ", precioEntrada:" + precioEntrada;
+		return "MUSEO " + nombre + ": \naforo: " + aforo + ", precioEntrada:" + precioEntrada;
 	}
 	
 	

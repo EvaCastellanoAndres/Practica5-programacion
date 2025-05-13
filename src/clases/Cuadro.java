@@ -10,8 +10,8 @@ public class Cuadro extends ObraDeArte {
 		this.estilo = "";
 	}
 
-	public Cuadro(String titulo, int siglo, Artista artista, String estilo) {
-		super(titulo, siglo, artista);
+	public Cuadro(String titulo, int siglo, String estilo) {
+		super(titulo, siglo);
 		this.estilo = estilo;
 	}
 

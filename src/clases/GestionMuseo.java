@@ -4,10 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class GesionMuseo {
+public class GestionMuseo {
 	// ARRAYLISTS
 	private ArrayList<Museo> listaMuseos;
-	private ArrayList<Artista> listaArtistas;
 	private ArrayList<ObraDeArte> listaObrasDeArte;
 	private ArrayList<Cuadro> listaCuadros;
 	private ArrayList<Escultura> listaEsculturas;
@@ -17,9 +16,8 @@ public class GesionMuseo {
 	private ArrayList<EventoGenerico> listaEventosGenericos;
 
 	// CONSTRUCTOR
-	public GesionMuseo() {
+	public GestionMuseo() {
 		listaMuseos = new ArrayList<Museo>();
-		listaArtistas = new ArrayList<Artista>();
 		listaObrasDeArte = new ArrayList<ObraDeArte>();
 		listaCuadros = new ArrayList<Cuadro>();
 		listaEsculturas = new ArrayList<Escultura>();
@@ -65,51 +63,9 @@ public class GesionMuseo {
 		}
 	}
 
-	// ALTA ARTISTA
-	public void altaArtista(String nombre, String apellidos, LocalDate fechaNacimiento, LocalDate fechaFallecimiento,
-			String nacionalidad) {
-		Artista nuevoArtista = new Artista();
-		nuevoArtista.setNombre(nombre);
-		nuevoArtista.setApellidos(apellidos);
-		nuevoArtista.setFechaNacimiento(fechaNacimiento);
-		nuevoArtista.setFechaFallecimiento(fechaFallecimiento);
-		nuevoArtista.setNacionalidad(nacionalidad);
-		listaArtistas.add(nuevoArtista);
-	}
-
-	// LISTAR ARTISTAS
-	public void listarArtistas() {
-		for (Artista artista : listaArtistas) {
-			if (artista != null) {
-				System.out.println(artista);
-			}
-		}
-	}
-
-	// BUSCAR ARTISTA
-	public Artista buscarArtista(String apellidos) {
-		for (Artista artista : listaArtistas) {
-			if (artista != null && artista.getApellidos().equalsIgnoreCase(apellidos)) {
-				return artista;
-			}
-		}
-		return null;
-	}
-
-	// ELIMINAR ARTISTA
-	public void eliminarArtista(String apellidos) {
-		Iterator<Artista> iteradorArtistas = listaArtistas.iterator();
-		while (iteradorArtistas.hasNext()) {
-			Artista artista = iteradorArtistas.next();
-			if (artista.getApellidos().equalsIgnoreCase(apellidos)) {
-				iteradorArtistas.remove();
-			}
-		}
-	}
-
 	// ALTA OBRA DE ARTE
-	public void altaObraDeArte(String titulo, int siglo, Artista artista) {
-		ObraDeArte nuevaObraDeArte = new ObraDeArte(titulo, siglo, artista);
+	public void altaObraDeArte(String titulo, int siglo) {
+		ObraDeArte nuevaObraDeArte = new ObraDeArte(titulo, siglo);
 		listaObrasDeArte.add(nuevaObraDeArte);
 	}
 
@@ -144,8 +100,8 @@ public class GesionMuseo {
 	}
 
 	// ALTA CUADRO
-	public void altaCuadro(String titulo, int siglo, Artista artista, String estilo) {
-		Cuadro nuevoCuadro = new Cuadro(titulo, siglo, artista, estilo);
+	public void altaCuadro(String titulo, int siglo, String estilo) {
+		Cuadro nuevoCuadro = new Cuadro(titulo, siglo, estilo);
 		listaCuadros.add(nuevoCuadro);
 	}
 
@@ -180,8 +136,8 @@ public class GesionMuseo {
 	}
 
 	// ALTA ESCULTURA
-	public void altaEscultura(String titulo, int siglo, Artista artista, String material) {
-		Escultura nuevaEscultura = new Escultura(titulo, siglo, artista, material);
+	public void altaEscultura(String titulo, int siglo, String material) {
+		Escultura nuevaEscultura = new Escultura(titulo, siglo, material);
 		listaEsculturas.add(nuevaEscultura);
 	}
 

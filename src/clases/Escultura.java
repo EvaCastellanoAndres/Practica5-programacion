@@ -8,8 +8,8 @@ public class Escultura extends ObraDeArte {
 		this.material = "";
 	}
 
-	public Escultura(String titulo, int siglo, Artista artista, String material) {
-		super(titulo, siglo, artista);
+	public Escultura(String titulo, int siglo, String material) {
+		super(titulo, siglo);
 		this.material = material;
 	}
 

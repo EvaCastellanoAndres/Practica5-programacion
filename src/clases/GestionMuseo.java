@@ -36,9 +36,7 @@ public class GestionMuseo {
 	// LISTAR MUSEOS
 	public void listarMuseos() {
 		for (Museo museo : listaMuseos) {
-			if (museo != null) {
-				System.out.println(museo);
-			}
+			System.out.println(museo + "\n");
 		}
 	}
 
@@ -63,6 +61,16 @@ public class GestionMuseo {
 		}
 	}
 
+	// DEVOLVER MUSEO
+	public Museo devolverMuseo(String nombre) {
+		for (Museo museo : listaMuseos) {
+			if (museo.getNombre().equalsIgnoreCase(nombre)) {
+				return museo;
+			}
+		}
+		return null;
+	}
+
 	// ALTA OBRA DE ARTE
 	public void altaObraDeArte(String titulo, int siglo) {
 		ObraDeArte nuevaObraDeArte = new ObraDeArte(titulo, siglo);
@@ -72,9 +80,7 @@ public class GestionMuseo {
 	// LISTAR OBRAS DE ARTE
 	public void listarObrasDeArte() {
 		for (ObraDeArte obraArte : listaObrasDeArte) {
-			if (obraArte != null) {
-				System.out.println(obraArte);
-			}
+			System.out.println(obraArte + "\n");
 		}
 	}
 
@@ -108,9 +114,7 @@ public class GestionMuseo {
 	// LISTAR CUADROS
 	public void listarCuadros() {
 		for (Cuadro cuadro : listaCuadros) {
-			if (cuadro != null) {
-				System.out.println(cuadro);
-			}
+			System.out.println(cuadro + "\n");
 		}
 	}
 
@@ -144,9 +148,7 @@ public class GestionMuseo {
 	// LISTAR ESCULTURAS
 	public void listarEsculturas() {
 		for (Escultura escultura : listaEsculturas) {
-			if (escultura != null) {
-				System.out.println(escultura);
-			}
+			System.out.println(escultura + "\n");
 		}
 	}
 
@@ -172,17 +174,15 @@ public class GestionMuseo {
 	}
 
 	// ALTA EMPLEADO
-	public void altaEmpleado(String nombre, String apellidos, String dni, double sueldo, Museo museo) {
-		Empleado nuevoEmpleado = new Empleado(nombre, apellidos, dni, sueldo, museo);
+	public void altaEmpleado(String nombre, String apellidos, String dni, double sueldo, String museo) {
+		Empleado nuevoEmpleado = new Empleado(nombre, apellidos, dni, sueldo, devolverMuseo(museo));
 		listaEmpleados.add(nuevoEmpleado);
 	}
 
 	// LISTAR EMPLEADOS
 	public void listarEmpleados() {
 		for (Empleado empleado : listaEmpleados) {
-			if (empleado != null) {
-				System.out.println(empleado);
-			}
+			System.out.println(empleado + "\n");
 		}
 	}
 
@@ -207,19 +207,28 @@ public class GestionMuseo {
 		}
 	}
 
+	// DEVOLVER EMPLEADO
+	public Empleado devolverEmpleado(String DNI) {
+		for (Empleado empleado : listaEmpleados) {
+			if (empleado.getDni().equalsIgnoreCase(DNI)) {
+				return empleado;
+			}
+		}
+		return null;
+	}
+
 	// ALTA EVENTO
-	public void altaEvento(String nombre, Empleado organizador, LocalDate fechaInicio, LocalDate fechaFin, String tema,
+	public void altaEvento(String nombre, Empleado organizador, String fechaInicio, String fechaFin, String tema,
 			Museo museo) {
-		Evento nuevoEvento = new Evento(nombre, organizador, fechaInicio, fechaFin, tema, museo);
-		listaEventos.add(nuevoEvento);
+		LocalDate fechaInicioLD = LocalDate.parse(fechaInicio);
+		LocalDate fechaFinLD = LocalDate.parse(fechaFin);
+		listaEventos.add(new Evento(nombre, organizador, fechaInicioLD, fechaFinLD, tema, museo));
 	}
 
 	// LISTAR EVENTOS
 	public void listarEventos() {
 		for (Evento evento : listaEventos) {
-			if (evento != null) {
-				System.out.println(evento);
-			}
+			System.out.println(evento + "\n");
 		}
 	}
 
@@ -245,19 +254,19 @@ public class GestionMuseo {
 	}
 
 	// ALTA EVENTO BENEFICO
-	public void altaEventoBenefico(String nombre, Empleado organizador, LocalDate fechaInicio, LocalDate fechaFin,
-			String tema, Museo museo, String causa, double metaRecaudacion, double totalRecaudado) {
-		EventoBenefico nuevoEventoBenefico = new EventoBenefico(nombre, organizador, fechaInicio, fechaFin, tema, museo,
-				causa, metaRecaudacion, totalRecaudado);
-		listaEventosBeneficos.add(nuevoEventoBenefico);
+	public void altaEventoBenefico(String nombre, String organizador, String fechaInicio, String fechaFin, String tema,
+			String museo, String causa, double metaRecaudacion, double totalRecaudado) {
+		LocalDate fechaInicioLD = LocalDate.parse(fechaInicio);
+		LocalDate fechaFinLD = LocalDate.parse(fechaFin);
+
+		listaEventosBeneficos.add(new EventoBenefico(nombre, devolverEmpleado(organizador), fechaInicioLD, fechaFinLD,
+				tema, devolverMuseo(museo), causa, metaRecaudacion, totalRecaudado));
 	}
 
 	// LISTAR EVENTOS BENEFICOS
 	public void listarEventosBeneficos() {
 		for (EventoBenefico eventoBenefico : listaEventosBeneficos) {
-			if (eventoBenefico != null) {
-				System.out.println(eventoBenefico);
-			}
+			System.out.println(eventoBenefico + "\n");
 		}
 	}
 
@@ -283,19 +292,18 @@ public class GestionMuseo {
 	}
 
 	// ALTA EVENTO GENERICO
-	public void altaEventoGenerico(String nombre, Empleado organizador, LocalDate fechaInicio, LocalDate fechaFin,
-			String tema, Museo museo, String tipo, String publicoObjetivo, boolean requiereInscripcion) {
-		EventoGenerico nuevoEventoGenerico = new EventoGenerico(nombre, organizador, fechaInicio, fechaFin, tema, museo,
-				tipo, publicoObjetivo, requiereInscripcion);
-		listaEventosGenericos.add(nuevoEventoGenerico);
+	public void altaEventoGenerico(String nombre, String organizador, String fechaInicio, String fechaFin, String tema,
+			String museo, String tipo, String publicoObjetivo, boolean requiereInscripcion) {
+		LocalDate fechaInicioLD = LocalDate.parse(fechaInicio);
+		LocalDate fechaFinLD = LocalDate.parse(fechaFin);
+		listaEventosGenericos.add(new EventoGenerico(nombre, devolverEmpleado(organizador), fechaInicioLD, fechaFinLD,
+				tema, devolverMuseo(museo), tipo, publicoObjetivo, requiereInscripcion));
 	}
 
 	// LISTAR EVENTOS GENERICOS
 	public void listarEventosGenericos() {
 		for (EventoGenerico eventoGenerico : listaEventosGenericos) {
-			if (eventoGenerico != null) {
-				System.out.println(eventoGenerico);
-			}
+			System.out.println(eventoGenerico + "\n");
 		}
 	}
 

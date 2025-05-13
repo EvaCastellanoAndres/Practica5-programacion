@@ -38,7 +38,7 @@ public class ObraDeArte {
 	
 	@Override
 	public String toString() {
-		return "ObraDeArte: \ntitulo: " + titulo + ", siglo " + siglo;
+		return "Obra De Arte: \nTítulo: " + titulo + ", siglo " + siglo;
 	}
 
 }

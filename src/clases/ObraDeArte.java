@@ -3,9 +3,9 @@ package clases;
 public class ObraDeArte {
 	private String titulo;
 	private int siglo;
-	
+
 	// CONSTRUCTORES
-	
+
 	public ObraDeArte() {
 		this.titulo = "";
 		this.siglo = 0;
@@ -17,7 +17,7 @@ public class ObraDeArte {
 	}
 
 	// GETTERS Y SETTERS
-	
+
 	public String getTitulo() {
 		return titulo;
 	}
@@ -35,10 +35,15 @@ public class ObraDeArte {
 	}
 
 	// ToSTRING
-	
 	@Override
 	public String toString() {
-		return "Obra de arte: \nTítulo: " + titulo + ", siglo " + siglo;
+		if(siglo<0) {
+			siglo=siglo*-2+siglo;
+			return "Obra de arte: \nTítulo: " + titulo + ", siglo " + siglo+" a.C";
+		}else {
+			return "Obra de arte: \nTítulo: " + titulo + ", siglo " + siglo;
+		}
+		
 	}
 
 }

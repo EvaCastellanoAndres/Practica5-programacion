@@ -34,10 +34,6 @@ public class DarDeAlta {
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
 
-	/*
-	 * public Cuadro(String titulo, int siglo, String estilo) { super(titulo,
-	 * siglo); this.estilo = estilo; }
-	 */
 	public static void altaCuadro(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {
@@ -274,12 +270,7 @@ public class DarDeAlta {
 			}
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
-
-	/*
-	 * (String nombre, Empleado organizador, LocalDate fechaInicio, LocalDate
-	 * fechaFin, String tema, Museo museo, String tipo, String publicoObjetivo,
-	 * boolean requiereInscripcion)
-	 */
+	
 	public static void altaEventoGenerico(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {

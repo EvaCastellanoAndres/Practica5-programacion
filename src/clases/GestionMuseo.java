@@ -27,6 +27,19 @@ public class GestionMuseo {
 		listaEventosGenericos = new ArrayList<EventoGenerico>();
 	}
 
+	// GETTERS
+	public ArrayList<EventoGenerico> getListaEventosGenericos() {
+		return listaEventosGenericos;
+	}
+
+	public ArrayList<Evento> getListaEventos() {
+		return listaEventos;
+	}
+	
+	public ArrayList<EventoBenefico> getListaEventosBeneficos() {
+		return listaEventosBeneficos;
+	}
+
 	// ALTA MUSEO
 	public void altaMuseo(String nombre, int aforo, double precioEntrada) {
 		Museo nuevoMuseo = new Museo(nombre, aforo, precioEntrada);

@@ -32,7 +32,7 @@ public class Menu {
 		System.out.println("  3 _ Listar");
 		System.out.println("    |- 3.1 -> Museos");
 		System.out.println("    |- 3.2 -> Cuadros");
-		System.out.println("    |- 1.3 -> Escultura");
+		System.out.println("    |- 3.3 -> Escultura");
 		System.out.println("    |- 3.4 -> Obras de Arte");
 		System.out.println("    |- 3.5 -> Empleados");
 		System.out.println("    |- 3.6 -> Eventos");
@@ -42,24 +42,22 @@ public class Menu {
 		System.out.println("  4 _ Eliminar");
 		System.out.println("    |- 4.1 -> Museo");
 		System.out.println("    |- 4.2 -> Cuadro");
-		System.out.println("    |- 1.3 -> Escultura");
+		System.out.println("    |- 4.3 -> Escultura");
 		System.out.println("    |- 4.4 -> Obra de Arte");
 		System.out.println("    |- 4.5 -> Empleado");
 		System.out.println("    |- 4.6 -> Evento");
 		System.out.println("    |- 4.7 -> Evento benéfico");
 		System.out.println("    |- 4.8 -> Evento genérico");
 		System.out.println();
-		System.out.println("   _ Comprobar estado de evento");
+		System.out.println("  5 -> Comprobar estado de evento");
 		System.out.println();
-		System.out.println("   _ Comprobar duración de evento");
+		System.out.println("  6 -> Comprobar duración de evento");
 		System.out.println();
-		System.out.println("   _ Añadir donación a evento benéfico");
+		System.out.println("  7 -> Añadir donación a evento benéfico");
 		System.out.println();
-		System.out.println("   _ Comprobar estado donaciones de evento benéfico");
+		System.out.println("  8 -> Comprobar estado donaciones de eventos benéficos");
 		System.out.println();
-		System.out.println("   _ Añadir donación a evento benéfico");
-		System.out.println();
-		System.out.println(" X -> Salir");
+		System.out.println("9 -> Salir");
 	}
 
 }

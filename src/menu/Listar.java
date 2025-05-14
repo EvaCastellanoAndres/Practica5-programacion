@@ -2,6 +2,7 @@ package menu;
 
 import java.util.Scanner;
 
+import clases.EventoGenerico;
 import clases.GestionMuseo;
 
 public class Listar {
@@ -55,8 +56,12 @@ public class Listar {
 	}
 
 	public static void listarEventosGenericos(Scanner input, GestionMuseo gestion, String seguir) {
-		System.out.println("    ------ Lista eventos genericos ------");
-		gestion.listarEventosGenericos();
+
+		System.out.println("    ------ Lista eventos genéricos ------");
+		for (EventoGenerico evento : gestion.getListaEventosGenericos()) {
+			System.out.println(evento.descripcionEvento());
+			System.out.println("-----------------------------------------------");
+		}
 		System.out.println("Pulse enter para salir");
 		seguir = input.nextLine();
 	}

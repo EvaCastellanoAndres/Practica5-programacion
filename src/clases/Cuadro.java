@@ -16,7 +16,7 @@ public class Cuadro extends ObraDeArte {
 	}
 
 	// GETTERS Y SETTERS
-	
+
 	public String getEstilo() {
 		return estilo;
 	}
@@ -26,10 +26,16 @@ public class Cuadro extends ObraDeArte {
 	}
 
 	// ToSTRING
-	
+
 	@Override
 	public String toString() {
-		return super.toString()+"\nEstilo: " + estilo ;
+		int siglo = getSiglo();
+		if (super.getSiglo() < 0) {
+			siglo = siglo * -2 + siglo;
+		return "Título: " + super.getTitulo() + ", siglo " + siglo+" a.C" + "\nEstilo: " + estilo;
+		}else {
+			return "Título: " + super.getTitulo() + ", siglo " + super.getSiglo() + "\nEstilo: " + estilo;
+		}
 	}
 
 }

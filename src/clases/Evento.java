@@ -1,7 +1,7 @@
 package clases;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import java.time.Period;
 
 public class Evento {
 	private String nombre;
@@ -90,21 +90,26 @@ public class Evento {
 	}
 
 	// METODOS PROPIOS
-
 	public void estadoEvento() {
-		LocalDate hoy = LocalDate.now();
-		if (fechaInicio.isAfter(hoy)) {
-			System.out.println("El evento comienza dentro de " + ChronoUnit.DAYS.between(hoy, fechaInicio) + " días.");
-		} else if (fechaFin.isBefore(hoy)) {
-			System.out.println("El evento terminó hace " + ChronoUnit.DAYS.between(fechaFin, hoy) + "días");
-		} else {
-			System.out.println("El evento comenzó hace " + ChronoUnit.DAYS.between(fechaInicio, hoy)
-					+ " días y terminará en " + ChronoUnit.DAYS.between(hoy, fechaFin)+" días");
-		}
+	    LocalDate hoy = LocalDate.now();
+
+	    if (fechaInicio.isAfter(hoy)) {
+	        Period diferencia = Period.between(hoy, fechaInicio);
+	        System.out.println("El evento comienza dentro de " + diferencia.getDays() + " días.");
+	    } else if (fechaFin.isBefore(hoy)) {
+	        Period diferencia = Period.between(fechaFin, hoy);
+	        System.out.println("El evento terminó hace " + diferencia.getDays() + " días.");
+	    } else {
+	        Period desdeInicio = Period.between(fechaInicio, hoy);
+	        Period hastaFin = Period.between(hoy, fechaFin);
+	        System.out.println("El evento comenzó hace " + desdeInicio.getDays()
+	            + " días y terminará en " + hastaFin.getDays() + " días.");
+	    }
 	}
-	
+
 	public int duracionEvento() {
-		int duracion=(int) (ChronoUnit.DAYS.between(fechaInicio, fechaFin) + 1);
-		return duracion;
+	    Period duracion = Period.between(fechaInicio, fechaFin);
+	    return duracion.getDays() + 1;
 	}
+
 }

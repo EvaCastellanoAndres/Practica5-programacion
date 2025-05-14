@@ -50,6 +50,13 @@ public class EventoBenefico extends Evento {
 		this.totalRecaudado = totalRecaudado;
 	}
 
+	// ATRIBUTO SOBREESCRITO DE EVENTO
+	@Override
+	public void setNombre(String nombre) {
+	    super.setNombre(nombre + " (Benéfico)");
+	}
+
+
 	// ToSTRING
 
 	@Override

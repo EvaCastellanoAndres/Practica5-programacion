@@ -23,7 +23,13 @@ public class Escultura extends ObraDeArte {
 
 	@Override
 	public String toString() {
-		return "Escultura:  \n"+super.toString()+", material: " + material;
+		int siglo = getSiglo();
+		if (super.getSiglo() < 0) {
+			siglo = siglo * -2 + siglo;
+			return "Título: " + super.getTitulo() + ", siglo " + siglo + " a.C" + "\nMaterial: " + material;
+		} else {
+			return "Título: " + super.getTitulo() + ", siglo " + siglo + "\nMaterial: " + material;
+		}
 	}
 
 }

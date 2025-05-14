@@ -9,6 +9,10 @@ import menu.DarDeAlta;
 import menu.Listar;
 import menu.Buscar;
 import menu.Eliminar;
+import menu.ComprobarEstadoEvento;
+import menu.ComprobarDuracionEvento;
+import menu.AñadirDonacion;
+import menu.EstadoDonaciones;
 
 public class Programa {
 
@@ -165,11 +169,25 @@ public class Programa {
 				Eliminar.eliminarEventoGenerico(input, gestion);
 				break;
 
+			case "5":// Comprobar estado evento
+				ComprobarEstadoEvento.comprobarEstado(input, gestion, gestion.getListaEventos(), seguir);
+				break;
+				
+			case "6":// Comprobar duracion evento
+				ComprobarDuracionEvento.comprobarEstado(input, gestion, gestion.getListaEventos(), seguir);
+				break;
+				
+			case "7":// Añadir donacion a evento benefico
+				AñadirDonacion.añadirDonacion(input, gestion, gestion.getListaEventosBeneficos(), seguir);
+				break;
+			case "8":// Ver el estado de las donaciones de un evento benefico
+				EstadoDonaciones.mostrarEstado(input, gestion, null, seguir);
+				break;
 			default:
 				System.out.println("Opción no válida");
 				break;
 			}
-		} while (!opcion.equals("5"));
+		} while (!opcion.equals("9")); // 9 -> salir
 
 		input.close();
 	}

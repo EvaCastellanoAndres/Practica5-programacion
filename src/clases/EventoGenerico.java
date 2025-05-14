@@ -58,25 +58,20 @@ public class EventoGenerico extends Evento {
 				+ requiereInscripcion + "\n" + super.toString();
 	}
 
-	// METODOS PROPIOS
+	// METODO PROPIO
+	public String descripcionEvento() {
+		String descripcion = "";
+		if (requiereInscripcion) {
+			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: del " + getFechaInicio() + " al "
+					+ getFechaFin() + "\n" + "Tipo: " + tipo + "\n" + "Público objetivo: " + publicoObjetivo + "\n"
+					+ "Requiere inscripción";
+		} else {
+			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: del " + getFechaInicio() + " al "
+					+ getFechaFin() + "\n" + "Tipo: " + tipo + "\n" + "Público objetivo: " + publicoObjetivo + "\n"
+					+ "No requiere inscripción";
+		}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		return descripcion;
+	}
 
 }

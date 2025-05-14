@@ -29,7 +29,7 @@ public class Cuadro extends ObraDeArte {
 	
 	@Override
 	public String toString() {
-		return "Cuadro: \n"+ super.toString()+", estilo: " + estilo ;
+		return super.toString()+"\nEstilo: " + estilo ;
 	}
 
 }

@@ -6,14 +6,14 @@ import java.util.Iterator;
 
 public class GestionMuseo {
 	// ARRAYLISTS
-	private ArrayList<Museo> listaMuseos;
-	private ArrayList<ObraDeArte> listaObrasDeArte;
-	private ArrayList<Cuadro> listaCuadros;
-	private ArrayList<Escultura> listaEsculturas;
-	private ArrayList<Empleado> listaEmpleados;
-	private ArrayList<Evento> listaEventos;
-	private ArrayList<EventoBenefico> listaEventosBeneficos;
-	private ArrayList<EventoGenerico> listaEventosGenericos;
+	protected ArrayList<Museo> listaMuseos;
+	protected ArrayList<ObraDeArte> listaObrasDeArte;
+	protected ArrayList<Cuadro> listaCuadros;
+	protected ArrayList<Escultura> listaEsculturas;
+	protected ArrayList<Empleado> listaEmpleados;
+	protected ArrayList<Evento> listaEventos;
+	protected ArrayList<EventoBenefico> listaEventosBeneficos;
+	protected ArrayList<EventoGenerico> listaEventosGenericos;
 
 	// CONSTRUCTOR
 	public GestionMuseo() {
@@ -40,14 +40,14 @@ public class GestionMuseo {
 		}
 	}
 
-	// BUSCAR MUSEO
-	public Museo buscarMuseo(String nombre) {
+	// Existe MUSEO
+	public boolean existeMuseo(String nombre) {
 		for (Museo museo : listaMuseos) {
 			if (museo != null && museo.getNombre().equalsIgnoreCase(nombre)) {
-				return museo;
+				return true;
 			}
 		}
-		return null;
+		return false;
 	}
 
 	// ELIMINAR MUSEO
@@ -64,7 +64,7 @@ public class GestionMuseo {
 	// DEVOLVER MUSEO
 	public Museo devolverMuseo(String nombre) {
 		for (Museo museo : listaMuseos) {
-			if (museo.getNombre().equalsIgnoreCase(nombre)) {
+			if (museo != null && museo.getNombre().equalsIgnoreCase(nombre)) {
 				return museo;
 			}
 		}
@@ -105,6 +105,16 @@ public class GestionMuseo {
 		}
 	}
 
+	// EXISTE OBRA DE ARTE
+	public boolean existeObraDeArte(String titulo) {
+		for (ObraDeArte obra : listaObrasDeArte) {
+			if (obra.getTitulo().equalsIgnoreCase(titulo)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	// ALTA CUADRO
 	public void altaCuadro(String titulo, int siglo, String estilo) {
 		Cuadro nuevoCuadro = new Cuadro(titulo, siglo, estilo);
@@ -137,6 +147,16 @@ public class GestionMuseo {
 				iteradorCuadros.remove();
 			}
 		}
+	}
+
+	// EXISTE CUADRO
+	public boolean existeCuadro(String titulo) {
+		for (Cuadro cuadro : listaCuadros) {
+			if (cuadro.getTitulo().equalsIgnoreCase(titulo)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	// ALTA ESCULTURA
@@ -173,6 +193,16 @@ public class GestionMuseo {
 		}
 	}
 
+	// EXISTE ESCULTURA
+	public boolean existeEscultura(String titulo) {
+		for (Escultura escultura : listaEsculturas) {
+			if (escultura.getTitulo().equalsIgnoreCase(titulo)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	// ALTA EMPLEADO
 	public void altaEmpleado(String nombre, String apellidos, String dni, double sueldo, String museo) {
 		Empleado nuevoEmpleado = new Empleado(nombre, apellidos, dni, sueldo, devolverMuseo(museo));
@@ -207,22 +237,23 @@ public class GestionMuseo {
 		}
 	}
 
-	// DEVOLVER EMPLEADO
-	public Empleado devolverEmpleado(String DNI) {
+	// EXISTE EMPLEADO
+	public boolean existeEmpleado(String DNI) {
 		for (Empleado empleado : listaEmpleados) {
 			if (empleado.getDni().equalsIgnoreCase(DNI)) {
-				return empleado;
+				return true;
 			}
 		}
-		return null;
+		return false;
 	}
 
 	// ALTA EVENTO
-	public void altaEvento(String nombre, Empleado organizador, String fechaInicio, String fechaFin, String tema,
-			Museo museo) {
+	public void altaEvento(String nombre, String organizador, String fechaInicio, String fechaFin, String tema,
+			String museo) {
 		LocalDate fechaInicioLD = LocalDate.parse(fechaInicio);
 		LocalDate fechaFinLD = LocalDate.parse(fechaFin);
-		listaEventos.add(new Evento(nombre, organizador, fechaInicioLD, fechaFinLD, tema, museo));
+		listaEventos.add(
+				new Evento(nombre, buscarEmpleado(organizador), fechaInicioLD, fechaFinLD, tema, devolverMuseo(museo)));
 	}
 
 	// LISTAR EVENTOS
@@ -253,13 +284,23 @@ public class GestionMuseo {
 		}
 	}
 
+	// EXISTE EVENTO
+	public boolean existeEvento(String nombre) {
+		for (Evento evento : listaEventos) {
+			if (evento.getNombre().equalsIgnoreCase(nombre)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	// ALTA EVENTO BENEFICO
 	public void altaEventoBenefico(String nombre, String organizador, String fechaInicio, String fechaFin, String tema,
 			String museo, String causa, double metaRecaudacion, double totalRecaudado) {
 		LocalDate fechaInicioLD = LocalDate.parse(fechaInicio);
 		LocalDate fechaFinLD = LocalDate.parse(fechaFin);
 
-		listaEventosBeneficos.add(new EventoBenefico(nombre, devolverEmpleado(organizador), fechaInicioLD, fechaFinLD,
+		listaEventosBeneficos.add(new EventoBenefico(nombre, buscarEmpleado(organizador), fechaInicioLD, fechaFinLD,
 				tema, devolverMuseo(museo), causa, metaRecaudacion, totalRecaudado));
 	}
 
@@ -291,12 +332,22 @@ public class GestionMuseo {
 		}
 	}
 
+	// EXISTE EVENTO BENEFICO
+	public boolean existeEventoBenefico(String nombre) {
+		for (EventoBenefico evento : listaEventosBeneficos) {
+			if (evento.getNombre().equalsIgnoreCase(nombre)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	// ALTA EVENTO GENERICO
 	public void altaEventoGenerico(String nombre, String organizador, String fechaInicio, String fechaFin, String tema,
 			String museo, String tipo, String publicoObjetivo, boolean requiereInscripcion) {
 		LocalDate fechaInicioLD = LocalDate.parse(fechaInicio);
 		LocalDate fechaFinLD = LocalDate.parse(fechaFin);
-		listaEventosGenericos.add(new EventoGenerico(nombre, devolverEmpleado(organizador), fechaInicioLD, fechaFinLD,
+		listaEventosGenericos.add(new EventoGenerico(nombre, buscarEmpleado(organizador), fechaInicioLD, fechaFinLD,
 				tema, devolverMuseo(museo), tipo, publicoObjetivo, requiereInscripcion));
 	}
 
@@ -326,5 +377,15 @@ public class GestionMuseo {
 				iteradorEventosGenericos.remove();
 			}
 		}
+	}
+
+	// EXISTE EVENTO BENEFICO
+	public boolean existeEventoGenerico(String nombre) {
+		for (EventoGenerico evento : listaEventosGenericos) {
+			if (evento.getNombre().equalsIgnoreCase(nombre)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

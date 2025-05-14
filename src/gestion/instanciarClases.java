@@ -67,35 +67,33 @@ public class instanciarClases {
 	}
 
 	public static void crearEventos(GestionMuseo gestion) {
-		gestion.altaEvento("Exposición de Arte Barroco", gestion.devolverEmpleado("12345678A"), "2010-03-01",
-				"2010-03-10", "Pintura Barroca", gestion.devolverMuseo("El Prado"));
+		gestion.altaEvento("Exposición de Arte Barroco", "12345678A", "2010-03-01", "2010-03-10", "Pintura Barroca",
+				"El Prado");
 
-		gestion.altaEvento("Impresionismo Francés", gestion.devolverEmpleado("3323560X"), "2023-04-10", "2023-04-25",
-				"Impresionismo", gestion.devolverMuseo("Louvre"));
+		gestion.altaEvento("Impresionismo Francés", "3323560X", "2023-04-10", "2023-04-25", "Impresionismo", "Louvre");
 
-		gestion.altaEvento("Vanguardias del Siglo XX", gestion.devolverEmpleado("98765432B"), "2025-05-05",
-				"2025-05-20", "Arte Moderno", gestion.devolverMuseo("de Arte Moderno"));
+		gestion.altaEvento("Vanguardias del Siglo XX", "98765432B", "2025-05-05", "2025-05-20", "Arte Moderno",
+				"de Arte Moderno");
 
-		gestion.altaEvento("Escultura Contemporánea", gestion.devolverEmpleado("23456789C"), "2025-06-01", "2025-06-18",
-				"Escultura", gestion.devolverMuseo("Guggenheim Bilbao"));
+		gestion.altaEvento("Escultura Contemporánea", "23456789C", "2025-06-01", "2025-06-18", "Escultura",
+				"Guggenheim Bilbao");
 
-		gestion.altaEvento("Fotografía del Siglo XXI", gestion.devolverEmpleado("34567890D"), "2019-07-10",
-				"2019-07-25", "Fotografía", gestion.devolverMuseo("Thyssen-Bornemisza"));
+		gestion.altaEvento("Fotografía del Siglo XXI", "34567890D", "2019-07-10", "2019-07-25", "Fotografía",
+				"Thyssen-Bornemisza");
 
-		gestion.altaEvento("Arte y Tecnología", gestion.devolverEmpleado("45678901E"), "2025-08-15", "2025-08-30",
-				"Arte Digital", gestion.devolverMuseo("Guggenheim Bilbao"));
+		gestion.altaEvento("Arte y Tecnología", "45678901E", "2025-08-15", "2025-08-30", "Arte Digital",
+				"Guggenheim Bilbao");
 
-		gestion.altaEvento("El Renacimiento Italiano", gestion.devolverEmpleado("56789012F"), "2025-09-01",
-				"2025-09-15", "Renacimiento", gestion.devolverMuseo("El Prado"));
+		gestion.altaEvento("El Renacimiento Italiano", "56789012F", "2025-09-01", "2025-09-15", "Renacimiento",
+				"El Prado");
 
-		gestion.altaEvento("Surrealismo y Más Allá", gestion.devolverEmpleado("67890123G"), "2025-10-05", "2025-10-20",
-				"Surrealismo", gestion.devolverMuseo("Louvre"));
+		gestion.altaEvento("Surrealismo y Más Allá", "67890123G", "2025-10-05", "2025-10-20", "Surrealismo", "Louvre");
 
-		gestion.altaEvento("Mujeres en el Arte", gestion.devolverEmpleado("78901234H"), "2025-11-01", "2025-11-15",
-				"Arte Feminista", gestion.devolverMuseo("de Arte Moderno"));
+		gestion.altaEvento("Mujeres en el Arte", "78901234H", "2025-11-01", "2025-11-15", "Arte Feminista",
+				"de Arte Moderno");
 
-		gestion.altaEvento("Arte Abstracto Internacional", gestion.devolverEmpleado("89012345I"), "2025-12-01",
-				"2025-12-16", "Abstracción", gestion.devolverMuseo("Thyssen-Bornemisza"));
+		gestion.altaEvento("Arte Abstracto Internacional", "89012345I", "2025-12-01", "2025-12-16", "Abstracción",
+				"Thyssen-Bornemisza");
 
 	}
 

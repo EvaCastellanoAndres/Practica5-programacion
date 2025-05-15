@@ -1,12 +1,9 @@
 package menu;
 
-import java.util.ArrayList;
-
-import clases.Empleado;
-
 public class Menu {
-	protected ArrayList<Empleado> listaEmpleados;
-
+	/**
+	 * Método que muestra el menú.
+	 */
 	public static void menu() {
 		System.out.println("Elija una opción:");
 		System.out.println("  1 _ Dar de alta");

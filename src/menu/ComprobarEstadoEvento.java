@@ -4,12 +4,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import clases.Evento;
-import clases.GestionMuseo;
 
 public class ComprobarEstadoEvento {
-
-	public static void comprobarEstado(Scanner input, GestionMuseo gestion, ArrayList<Evento> listaEventos,
-			String seguir) {
+	/**
+	 * El método comprueba el estado actual de un evento seleccionado de una lista.
+	 * Muestra todos los eventos disponibles en una lista numerada, pide que se
+	 * seleccione uno por su número y, tras validar la entrada, llama al método
+	 * "estadoEvento()" del evento seleccionado. Este método muestra si el evento ya
+	 * ha terminado, si está en curso o si todavía no ha comenzado, indicando los
+	 * días que faltan o han pasado desde su inicio o fin. También espera a que el
+	 * usuario pulse enter para finalizar.
+	 * 
+	 * @param input        Scanner que permite escribir por consola
+	 * @param listaEventos ArrayList de eventos entre los que el usuario puede
+	 *                     elegir
+	 */
+	public static void comprobarEstado(Scanner input, ArrayList<Evento> listaEventos) {
 		String[] nombreEvento = new String[listaEventos.size()];
 		System.out.println("-- Seleccione el evento que desea comprobar --");
 
@@ -28,9 +38,11 @@ public class ComprobarEstadoEvento {
 		} while (seleccion < 1 || seleccion > listaEventos.size());
 
 		Evento eventoSeleccionado = listaEventos.get(seleccion - 1);
+		System.out.println("------------------------------------------------------------------");
 		eventoSeleccionado.estadoEvento();
-		input.nextLine();
+		System.out.println("------------------------------------------------------------------");
 		System.out.println("Pulse enter para salir");
-		seguir = input.nextLine();
+		input.nextLine();
+		input.nextLine();
 	}
 }

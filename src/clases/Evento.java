@@ -90,26 +90,36 @@ public class Evento {
 	}
 
 	// METODOS PROPIOS
+	/**
+	 * Este método muestra el estado actual del evento: dependiendo de si aún no ha
+	 * comenzado, si ya ha terminado o si está en curso. Indica cuántos días faltan
+	 * para que empiece o han pasado desde que terminó.
+	 */
 	public void estadoEvento() {
-	    LocalDate hoy = LocalDate.now();
+		LocalDate hoy = LocalDate.now();
 
-	    if (fechaInicio.isAfter(hoy)) {
-	        Period diferencia = Period.between(hoy, fechaInicio);
-	        System.out.println("El evento comienza dentro de " + diferencia.getDays() + " días.");
-	    } else if (fechaFin.isBefore(hoy)) {
-	        Period diferencia = Period.between(fechaFin, hoy);
-	        System.out.println("El evento terminó hace " + diferencia.getDays() + " días.");
-	    } else {
-	        Period desdeInicio = Period.between(fechaInicio, hoy);
-	        Period hastaFin = Period.between(hoy, fechaFin);
-	        System.out.println("El evento comenzó hace " + desdeInicio.getDays()
-	            + " días y terminará en " + hastaFin.getDays() + " días.");
-	    }
+		if (fechaInicio.isAfter(hoy)) {
+			Period diferencia = Period.between(hoy, fechaInicio);
+			System.out.println("El evento '" + nombre + "' comienza dentro de " + diferencia.getDays() + " días.");
+		} else if (fechaFin.isBefore(hoy)) {
+			Period diferencia = Period.between(fechaFin, hoy);
+			System.out.println("El evento '" + nombre + "' terminó hace " + diferencia.getDays() + " días.");
+		} else {
+			Period desdeInicio = Period.between(fechaInicio, hoy);
+			Period hastaFin = Period.between(hoy, fechaFin);
+			System.out.println("El evento '" + nombre + "' comenzó hace " + desdeInicio.getDays()
+					+ " días y terminará en " + hastaFin.getDays() + " días.");
+		}
 	}
 
+	/**
+	 * Este método calcula la duración total del evento en días.
+	 * 
+	 * @return Duración del evento en días
+	 */
 	public int duracionEvento() {
-	    Period duracion = Period.between(fechaInicio, fechaFin);
-	    return duracion.getDays() + 1;
+		Period duracion = Period.between(fechaInicio, fechaFin);
+		return duracion.getDays() + 1;
 	}
 
 }

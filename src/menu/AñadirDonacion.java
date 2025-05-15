@@ -7,8 +7,19 @@ import clases.EventoBenefico;
 import clases.GestionMuseo;
 
 public class AñadirDonacion {
+	/**
+	 * Permite seleccionar un evento benéfico de una lista e introducir una
+	 * donación. La cantidad debe ser positiva. Si se introduce -1, se cancela la
+	 * operación.
+	 * 
+	 * @param input                 Scanner para poder escribir por consola
+	 * @param gestion               Objeto que gestiona los eventos y museos
+	 * @param listaEventosBeneficos ArrayList de eventos benéficos disponibles
+	 * @param seguir                Variable para controlar la pausa tras la
+	 *                              donación
+	 */
 	public static void añadirDonacion(Scanner input, GestionMuseo gestion,
-			ArrayList<EventoBenefico> listaEventosBeneficos, String seguir) {
+			ArrayList<EventoBenefico> listaEventosBeneficos) {
 		String[] nombreEvento = new String[listaEventosBeneficos.size()];
 		System.out.println("-- Seleccione el evento al que desea añadir la donación --");
 
@@ -32,19 +43,17 @@ public class AñadirDonacion {
 		do {
 			System.out.println("Escriba la cantidad que desea donar (-1 para salir)");
 			cantidad = input.nextDouble();
-			if(cantidad < -1) {
+			if (cantidad < -1) {
 				System.out.println("La cantidad no puede ser menor a 0");
 			}
 		} while (cantidad < -1);
-		
-		if(cantidad > 0) {
-		eventoSeleccionado.añadirDonacion(cantidad);
-		System.out.println("* La donación se ha realizado con éxito *");
-		System.out.println("Pulse enter para salir");
-		seguir = input.nextLine();
+
+		if (cantidad > 0) {
+			eventoSeleccionado.añadirDonacion(cantidad);
+			System.out.println("* La donación se ha realizado con éxito *");
+			System.out.println("Pulse enter para salir");
+			input.nextLine();
 		}
 		input.nextLine();
-
-		
 	}
 }

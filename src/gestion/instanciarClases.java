@@ -3,6 +3,12 @@ package gestion;
 import clases.GestionMuseo;
 
 public class instanciarClases {
+	/**
+	 * Método que crea varios objetos de tipo Museo
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearMuseos(GestionMuseo gestion) {
 		gestion.altaMuseo("El Prado", 2500, 15);
 		gestion.altaMuseo("Louvre", 3000, 17.5);
@@ -11,6 +17,12 @@ public class instanciarClases {
 		gestion.altaMuseo("Thyssen-Bornemisza", 2000, 13.5);
 	}
 
+	/**
+	 * Método que crea varios objetos de tipo Cuadro
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearCuadros(GestionMuseo gestion) {
 		gestion.altaCuadro("Mujer con sombrilla", 17, "Impresionista");
 		gestion.altaCuadro("La noche estrellada", 19, "Postimpresionista");
@@ -26,6 +38,12 @@ public class instanciarClases {
 		gestion.altaCuadro("El almuerzo sobre la hierba", 19, "Impresionista");
 	}
 
+	/**
+	 * Método que crea varios objetos de tipo Escultura
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearEsculturas(GestionMuseo gestion) {
 		gestion.altaEscultura("David", 13, "bronce");
 		gestion.altaEscultura("El Pensador", 20, "bronce");
@@ -39,6 +57,12 @@ public class instanciarClases {
 		gestion.altaEscultura("Escultura sin título", 21, "acero inoxidable");
 	}
 
+	/**
+	 * Método que crea varios objetos de tipo ObraDeArte
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearObrasDeArte(GestionMuseo gestion) {
 		gestion.altaObraDeArte("Jarrones de David", 12);
 		gestion.altaObraDeArte("Mosaico de Baco", 3);
@@ -52,6 +76,12 @@ public class instanciarClases {
 		gestion.altaObraDeArte("Tesserae romana", -2);
 	}
 
+	/**
+	 * Método que crea varios objetos de tipo Empleado
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearEmpleados(GestionMuseo gestion) {
 		gestion.altaEmpleado("Ana", "Carreras", "12345678A", 1500, "El Prado");
 		gestion.altaEmpleado("Eva", "Castellano", "3323560X", 1500, "El Prado");
@@ -66,6 +96,12 @@ public class instanciarClases {
 		gestion.altaEmpleado("Ricardo", "Fernández", "90123456J", 1450, "Thyssen-Bornemisza");
 	}
 
+	/**
+	 * Método que crea varios objetos de tipo Evento
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearEventos(GestionMuseo gestion) {
 		gestion.altaEvento("Exposición de Arte Barroco", "12345678A", "2010-03-01", "2010-03-10", "Pintura Barroca",
 				"El Prado");
@@ -97,6 +133,12 @@ public class instanciarClases {
 
 	}
 
+	/**
+	 * Método que crea varios objetos de tipo EventoBenefico
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearEventosBeneficos(GestionMuseo gestion) {
 		gestion.altaEventoBenefico("Arte por la Infancia", "12345678A", // Ana
 				"2025-03-01", "2025-03-15", "Pintura Infantil", "El Prado", "Lucha contra la pobreza infantil", 10000,
@@ -138,6 +180,12 @@ public class instanciarClases {
 
 	}
 
+	/**
+	 * Método que crea varios objetos de tipo EventoGenerico
+	 * 
+	 * @param gestion Recibe un objeto de tipo GestionMuseo que se encarga de crear
+	 *                el objeto y añadirlo a su ArrayList correspondiente
+	 */
 	public static void crearEventosGenericos(GestionMuseo gestion) {
 		gestion.altaEventoGenerico("Taller de Pintura para Jóvenes", "12345678A", // Ana
 				"2025-03-20", "2025-03-21", "Pintura", "El Prado", "Taller", "Adolescentes", true);

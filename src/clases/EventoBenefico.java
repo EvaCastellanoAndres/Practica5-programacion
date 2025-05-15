@@ -53,9 +53,8 @@ public class EventoBenefico extends Evento {
 	// ATRIBUTO SOBREESCRITO DE EVENTO
 	@Override
 	public void setNombre(String nombre) {
-	    super.setNombre(nombre + " (Benéfico)");
+		super.setNombre(nombre + " (Benéfico)");
 	}
-
 
 	// ToSTRING
 
@@ -66,11 +65,20 @@ public class EventoBenefico extends Evento {
 	}
 
 	// METODOS PROPIOS
-	
+	/**
+	 * Añade una donación al total recaudado.
+	 * 
+	 * @param cantidad Cantidad donada
+	 */
 	public void añadirDonacion(double cantidad) {
 		this.totalRecaudado += cantidad;
 	}
 
+	/**
+	 * Indica si se ha alcanzado la meta de recaudación.
+	 * 
+	 * @return True si se ha alcanzado o superado la meta, false si no
+	 */
 	public boolean metaAlcanzada() {
 		if (this.totalRecaudado >= this.metaRecaudacion) {
 			return true;

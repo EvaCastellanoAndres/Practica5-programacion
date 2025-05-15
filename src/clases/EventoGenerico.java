@@ -59,14 +59,21 @@ public class EventoGenerico extends Evento {
 	}
 
 	// METODO PROPIO
+	/**
+	 * Método que devuelve una descripción más personalizada del evento genérico con
+	 * sus datos principales.
+	 * 
+	 * @return Cadena con la información del evento
+	 */
+
 	public String descripcionEvento() {
 		String descripcion = "";
 		if (requiereInscripcion) {
-			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: del " + getFechaInicio() + " al "
+			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: Del " + getFechaInicio() + " al "
 					+ getFechaFin() + "\n" + "Tipo: " + tipo + "\n" + "Público objetivo: " + publicoObjetivo + "\n"
 					+ "Requiere inscripción";
 		} else {
-			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: del " + getFechaInicio() + " al "
+			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: Del " + getFechaInicio() + " al "
 					+ getFechaFin() + "\n" + "Tipo: " + tipo + "\n" + "Público objetivo: " + publicoObjetivo + "\n"
 					+ "No requiere inscripción";
 		}

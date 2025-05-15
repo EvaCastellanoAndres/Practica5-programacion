@@ -27,13 +27,7 @@ public class Programa {
 		instanciarClases.crearEventos(gestion);
 		instanciarClases.crearEventosBeneficos(gestion);
 		instanciarClases.crearEventosGenericos(gestion);
-//		- 1 -> Museo
-//		- 2 -> Cuadro
-//		- 3 -> Obra de Arte
-//		- 4 -> Empleado
-//		- 5 -> Evento
-//		- 6 -> Evento benéfico
-//		- 7 -> Evento genérico
+		
 		String seguir = "";
 		String opcion;
 		do {
@@ -106,35 +100,35 @@ public class Programa {
 				break;
 
 			case "3.1":// Listar museos
-				Listar.listarMuseos(input, gestion, seguir);
+				Listar.listarMuseos(input, gestion);
 				break;
 
 			case "3.2":// Listar cuadros
-				Listar.listarCuadros(input, gestion, seguir);
+				Listar.listarCuadros(input, gestion);
 				break;
 
 			case "3.3":// Listar esculturas
-				Listar.listarEsculturas(input, gestion, seguir);
+				Listar.listarEsculturas(input, gestion);
 				break;
 
 			case "3.4":// Listar obrasDeArte
-				Listar.listarObrasDeArte(input, gestion, seguir);
+				Listar.listarObrasDeArte(input, gestion);
 				break;
 
 			case "3.5":// Listar empleados
-				Listar.listarEmpleados(input, gestion, seguir);
+				Listar.listarEmpleados(input, gestion);
 				break;
 
 			case "3.6":// Listar eventos
-				Listar.listarEventos(input, gestion, seguir);
+				Listar.listarEventos(input, gestion);
 				break;
 
 			case "3.7":// Listar eventos beneficos
-				Listar.listarEventosBeneficos(input, gestion, seguir);
+				Listar.listarEventosBeneficos(input, gestion);
 				break;
 
 			case "3.8":// Listar eventos genericos
-				Listar.listarEventosGenericos(input, gestion, seguir);
+				Listar.listarEventosGenericos(input, gestion);
 				break;
 
 			case "4.1":// Eliminar museo
@@ -170,18 +164,18 @@ public class Programa {
 				break;
 
 			case "5":// Comprobar estado evento
-				ComprobarEstadoEvento.comprobarEstado(input, gestion, gestion.getListaEventos(), seguir);
+				ComprobarEstadoEvento.comprobarEstado(input, gestion.getListaEventos());
 				break;
-				
+
 			case "6":// Comprobar duracion evento
-				ComprobarDuracionEvento.comprobarEstado(input, gestion, gestion.getListaEventos(), seguir);
+				ComprobarDuracionEvento.comprobarDuracion(input, gestion.getListaEventos());
 				break;
-				
+
 			case "7":// Añadir donacion a evento benefico
-				AñadirDonacion.añadirDonacion(input, gestion, gestion.getListaEventosBeneficos(), seguir);
+				AñadirDonacion.añadirDonacion(input, gestion, gestion.getListaEventosBeneficos());
 				break;
 			case "8":// Ver el estado de las donaciones de un evento benefico
-				EstadoDonaciones.mostrarEstado(input, gestion, null, seguir);
+				EstadoDonaciones.mostrarEstado(input, gestion.getListaEventosBeneficos());
 				break;
 			default:
 				System.out.println("Opción no válida");

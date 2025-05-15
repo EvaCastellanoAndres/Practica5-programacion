@@ -46,13 +46,10 @@ public class Museo {
 	}
 
 	// ToSTRING
-	
+
 	@Override
 	public String toString() {
-		return "Museo " + nombre + ": \nAforo: " + aforo + ", precio entrada: " + precioEntrada+"€";
+		return "Museo " + nombre + ": \nAforo: " + aforo + ", precio entrada: " + precioEntrada + "€";
 	}
-	
-	
-	
 
 }

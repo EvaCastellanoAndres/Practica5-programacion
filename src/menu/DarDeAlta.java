@@ -4,6 +4,13 @@ import java.util.Scanner;
 import clases.GestionMuseo;
 
 public class DarDeAlta {
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo Museo.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar el nuevo Museo
+	 */
 	public static void altaMuseo(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {
@@ -34,6 +41,13 @@ public class DarDeAlta {
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
 
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo Cuadro.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar el nuevo Cuadro
+	 */
 	public static void altaCuadro(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {
@@ -64,6 +78,14 @@ public class DarDeAlta {
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
 
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
+	 * Escultura.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar la nueva Escultura
+	 */
 	public static void altaEscultura(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {
@@ -80,7 +102,7 @@ public class DarDeAlta {
 				int siglo = input.nextInt();
 				System.out.println("Escriba el material:");
 				String material = input.nextLine();
-				gestion.altaCuadro(titulo, siglo, material);
+				gestion.altaEscultura(titulo, siglo, material);
 				System.out.println("* Se ha creado el cuadro con los datos introducidos *");
 				input.nextLine();
 				break;
@@ -94,6 +116,14 @@ public class DarDeAlta {
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
 
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
+	 * ObraDeArte.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar la nueva ObraDeArte
+	 */
 	public static void altaObraDeArte(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {
@@ -122,6 +152,14 @@ public class DarDeAlta {
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
 
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
+	 * Empleado.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar el nuevo Empleado
+	 */
 	public static void altaEmpleado(Scanner input, GestionMuseo gestion) {
 
 		int confirmacion = 0;
@@ -157,6 +195,13 @@ public class DarDeAlta {
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
 
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo Evento.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar el nuevo Evento
+	 */
 	public static void altaEvento(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {
@@ -210,6 +255,14 @@ public class DarDeAlta {
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
 
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
+	 * EventoBenefico.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar el nuevo EventoBenefico
+	 */
 	public static void altaEventoBenefico(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {
@@ -270,7 +323,15 @@ public class DarDeAlta {
 			}
 		} while (confirmacion != 1 || confirmacion != 2);
 	}
-	
+
+	/**
+	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
+	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
+	 * EventoGenerico.
+	 * 
+	 * @param input   Scanner que permite escribir por consola
+	 * @param gestion Objeto que se encarga de registrar el nuevo EventoGenerico
+	 */
 	public static void altaEventoGenerico(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
 		do {

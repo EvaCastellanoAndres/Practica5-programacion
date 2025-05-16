@@ -50,35 +50,22 @@ public class EventoGenerico extends Evento {
 		this.requiereInscripcion = requiereInscripcion;
 	}
 
+	/**
+	 * Indica si el evento es adecuado para un determinado público.
+	 * 
+	 * @param tipoPublico El tipo de público a comprobar
+	 * @return true si el público coincide con el objetivo del evento, false si no coincida
+	 */
+	public boolean esAdecuadoPara(String tipoPublico) {
+	    return this.publicoObjetivo.equalsIgnoreCase(tipoPublico);
+	}
+	
 	// ToSTRING
 
 	@Override
 	public String toString() {
-		return "EventoGenerico: \ntipo: " + tipo + ", publicoObjetivo: " + publicoObjetivo + ", requiereInscripcion: "
+		return "Tipo: " + tipo + ", publicoObjetivo: " + publicoObjetivo + ", requiereInscripcion: "
 				+ requiereInscripcion + "\n" + super.toString();
-	}
-
-	// METODO PROPIO
-	/**
-	 * Método que devuelve una descripción más personalizada del evento genérico con
-	 * sus datos principales.
-	 * 
-	 * @return Cadena con la información del evento
-	 */
-
-	public String descripcionEvento() {
-		String descripcion = "";
-		if (requiereInscripcion) {
-			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: Del " + getFechaInicio() + " al "
-					+ getFechaFin() + "\n" + "Tipo: " + tipo + "\n" + "Público objetivo: " + publicoObjetivo + "\n"
-					+ "Requiere inscripción";
-		} else {
-			descripcion = "Nombre evento: " + getNombre() + "\n" + "Fechas: Del " + getFechaInicio() + " al "
-					+ getFechaFin() + "\n" + "Tipo: " + tipo + "\n" + "Público objetivo: " + publicoObjetivo + "\n"
-					+ "No requiere inscripción";
-		}
-
-		return descripcion;
 	}
 
 }

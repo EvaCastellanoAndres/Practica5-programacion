@@ -81,14 +81,6 @@ public class Evento {
 		this.museo = museo;
 	}
 
-	// ToSTRING
-
-	@Override
-	public String toString() {
-		return "Evento: \nnombre: " + nombre + ", organizador: " + organizador + ", fechaInicio: " + fechaInicio
-				+ ", fechaFin: " + fechaFin + ", tema: " + tema + ", museo: " + museo;
-	}
-
 	// METODOS PROPIOS
 	/**
 	 * Este método muestra el estado actual del evento: dependiendo de si aún no ha
@@ -120,6 +112,14 @@ public class Evento {
 	public int duracionEvento() {
 		Period duracion = Period.between(fechaInicio, fechaFin);
 		return duracion.getDays() + 1;
+	}
+
+	// ToSTRING
+
+	@Override
+	public String toString() {
+		return "Nombre: " + nombre + "\nDel " + fechaInicio + " al " + fechaFin + "\nTema: " + tema + "\nMuseo: "
+				+ museo.getNombre() + "\nOrganizador: " + organizador.getNombre() + " " + organizador.getApellidos();
 	}
 
 }

@@ -56,14 +56,6 @@ public class EventoBenefico extends Evento {
 		super.setNombre(nombre + " (Benéfico)");
 	}
 
-	// ToSTRING
-
-	@Override
-	public String toString() {
-		return "EventoBenefico: \ncausa: " + causa + ", metaRecaudacion: " + metaRecaudacion + ", totalRecaudado: "
-				+ totalRecaudado + "\n" + super.toString();
-	}
-
 	// METODOS PROPIOS
 	/**
 	 * Añade una donación al total recaudado.
@@ -85,6 +77,14 @@ public class EventoBenefico extends Evento {
 		} else {
 			return false;
 		}
+	}
+	
+	// ToSTRING
+
+	@Override
+	public String toString() {
+		return super.toString()+"\nCausa: " + causa + "\nMeta de recaudacion: " + metaRecaudacion + "€ \nTotal recaudado: "
+				+ totalRecaudado+"€";
 	}
 
 }

@@ -26,9 +26,9 @@ public class Escultura extends ObraDeArte {
 		int siglo = getSiglo();
 		if (super.getSiglo() < 0) {
 			siglo = siglo * -2 + siglo;
-			return "Título: " + super.getTitulo() + ", siglo " + siglo + " a.C" + "\nMaterial: " + material;
+			return "Título: " + super.getTitulo() + "\nSiglo " + siglo + " a.C" + "\nMaterial: " + material;
 		} else {
-			return "Título: " + super.getTitulo() + ", siglo " + siglo + "\nMaterial: " + material;
+			return "Título: " + super.getTitulo() + "\nSiglo " + siglo + "\nMaterial: " + material;
 		}
 	}
 

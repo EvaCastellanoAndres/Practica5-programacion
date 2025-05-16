@@ -3,7 +3,7 @@ package programa;
 import java.util.Scanner;
 
 import clases.GestionMuseo;
-import gestion.instanciarClases;
+import gestion.InstanciarClases;
 import menu.Menu;
 import menu.DarDeAlta;
 import menu.Listar;
@@ -19,16 +19,15 @@ public class Programa {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		GestionMuseo gestion = new GestionMuseo();
-		instanciarClases.crearMuseos(gestion);
-		instanciarClases.crearCuadros(gestion);
-		instanciarClases.crearEsculturas(gestion);
-		instanciarClases.crearObrasDeArte(gestion);
-		instanciarClases.crearEmpleados(gestion);
-		instanciarClases.crearEventos(gestion);
-		instanciarClases.crearEventosBeneficos(gestion);
-		instanciarClases.crearEventosGenericos(gestion);
+		InstanciarClases.crearMuseos(gestion);
+		InstanciarClases.crearCuadros(gestion);
+		InstanciarClases.crearEsculturas(gestion);
+		InstanciarClases.crearObrasDeArte(gestion);
+		InstanciarClases.crearEmpleados(gestion);
+		InstanciarClases.crearEventos(gestion);
+		InstanciarClases.crearEventosBeneficos(gestion);
+		InstanciarClases.crearEventosGenericos(gestion);
 		
-		String seguir = "";
 		String opcion;
 		do {
 			Menu.menu();
@@ -97,6 +96,10 @@ public class Programa {
 
 			case "2.8":// Buscar evento generico
 				Buscar.buscarEventoGenerico(input, gestion);
+				break;
+				
+			case "2.9":// Buscar por publico objetivo
+				Buscar.publicoObjetivo(input, gestion, gestion.getListaEventosGenericos());
 				break;
 
 			case "3.1":// Listar museos

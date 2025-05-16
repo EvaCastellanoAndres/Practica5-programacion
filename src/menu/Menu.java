@@ -25,6 +25,7 @@ public class Menu {
 		System.out.println("    |- 2.6 -> Evento");
 		System.out.println("    |- 2.7 -> Evento benéfico");
 		System.out.println("    |- 2.8 -> Evento genérico");
+		System.out.println("    |- 2.9 -> Eventos por público objetivo");
 		System.out.println();
 		System.out.println("  3 _ Listar");
 		System.out.println("    |- 3.1 -> Museos");

@@ -2,7 +2,7 @@ package gestion;
 
 import clases.GestionMuseo;
 
-public class instanciarClases {
+public class InstanciarClases {
 	/**
 	 * Método que crea varios objetos de tipo Museo
 	 * 
@@ -85,7 +85,7 @@ public class instanciarClases {
 	public static void crearEmpleados(GestionMuseo gestion) {
 		gestion.altaEmpleado("Ana", "Carreras", "12345678A", 1500, "El Prado");
 		gestion.altaEmpleado("Eva", "Castellano", "3323560X", 1500, "El Prado");
-		gestion.altaEmpleado("Carlos", "Pérez", "98765432B", 1400, "Louvre");
+		gestion.altaEmpleado("Elena", "Jimenez", "98765432B", 1400, "Louvre");
 		gestion.altaEmpleado("María", "Martínez", "23456789C", 1200, "de Arte Moderno");
 		gestion.altaEmpleado("José", "Ramírez", "34567890D", 1600, "Guggenheim Bilbao");
 		gestion.altaEmpleado("Laura", "Gómez", "45678901E", 1300, "Thyssen-Bornemisza");
@@ -191,35 +191,35 @@ public class instanciarClases {
 				"2025-03-20", "2025-03-21", "Pintura", "El Prado", "Taller", "Adolescentes", true);
 
 		gestion.altaEventoGenerico("Charla sobre Impresionismo", "3323560X", // Eva
-				"2025-04-12", "2025-04-12", "Impresionismo", "Louvre", "Charla", "Público general", false);
+				"2025-04-12", "2025-04-12", "Impresionismo", "El Prado", "Charla", "Público general", false);
 
-		gestion.altaEventoGenerico("Visita Guiada Especial", "98765432B", // Carlos
-				"2025-05-18", "2025-05-18", "Arte Moderno", "de Arte Moderno", "Visita guiada", "Turistas", true);
+		gestion.altaEventoGenerico("Visita Guiada Especial", "98765432B", // Elena
+				"2025-05-18", "2025-05-18", "Arte Moderno", "El Prado", "Visita guiada", "Turistas", true);
 
 		gestion.altaEventoGenerico("Taller de Escultura en Arcilla", "23456789C", // María
 				"2025-06-10", "2025-06-12", "Escultura", "Guggenheim Bilbao", "Taller", "Adultos", true);
 
 		gestion.altaEventoGenerico("Mesa redonda sobre Arte y Sociedad", "34567890D", // José
 				"2025-07-15", "2025-07-15", "Arte contemporáneo", "Thyssen-Bornemisza", "Mesa redonda",
-				"Académicos y estudiantes", false);
+				"Estudiantes", false);
 
-		gestion.altaEventoGenerico("Visita Interactiva para Escolares", "45678901E", // Laura
+		gestion.altaEventoGenerico("Visita Interactiva para los más pequeños", "45678901E", // Laura
 				"2025-08-05", "2025-08-06", "Educación artística", "Guggenheim Bilbao", "Visita guiada",
-				"Niños en edad escolar", true);
+				"Niños", true);
 
 		gestion.altaEventoGenerico("Ciclo de Cine y Arte", "56789012F", // Javier
 				"2025-09-20", "2025-09-22", "Relación entre cine y arte", "El Prado", "Ciclo de cine",
-				"Cinéfilos y artistas", false);
+				"Adolescentes", false);
 
 		gestion.altaEventoGenerico("Taller de Grabado", "67890123G", // Isabel
-				"2025-10-08", "2025-10-10", "Técnicas de grabado", "Louvre", "Taller", "Adultos mayores", true);
+				"2025-10-08", "2025-10-10", "Técnicas de grabado", "Louvre", "Taller", "Adultos", true);
 
 		gestion.altaEventoGenerico("Charla: Arte como terapia", "78901234H", // Pedro
-				"2025-11-03", "2025-11-03", "Arte y bienestar", "de Arte Moderno", "Charla", "Psicólogos y terapeutas",
+				"2025-11-03", "2025-11-03", "Arte y bienestar", "de Arte Moderno", "Charla", "Adultos",
 				false);
 
 		gestion.altaEventoGenerico("Encuentro de Jóvenes Artistas", "89012345I", // Sofía
-				"2025-12-05", "2025-12-06", "Arte emergente", "Thyssen-Bornemisza", "Encuentro", "Jóvenes artistas",
+				"2025-12-05", "2025-12-06", "Arte emergente", "Thyssen-Bornemisza", "Encuentro", "Jóvenes",
 				true);
 
 	}

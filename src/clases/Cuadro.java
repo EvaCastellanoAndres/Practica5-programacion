@@ -32,9 +32,9 @@ public class Cuadro extends ObraDeArte {
 		int siglo = getSiglo();
 		if (super.getSiglo() < 0) {
 			siglo = siglo * -2 + siglo;
-		return "Título: " + super.getTitulo() + ", siglo " + siglo+" a.C" + "\nEstilo: " + estilo;
+		return "Título: " + super.getTitulo() + "\nSiglo " + siglo+" a.C" + "\nEstilo: " + estilo;
 		}else {
-			return "Título: " + super.getTitulo() + ", siglo " + super.getSiglo() + "\nEstilo: " + estilo;
+			return "Título: " + super.getTitulo() + "\nSiglo " + super.getSiglo() + "\nEstilo: " + estilo;
 		}
 	}
 

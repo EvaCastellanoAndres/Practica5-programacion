@@ -2,7 +2,6 @@ package menu;
 
 import java.util.Scanner;
 
-import clases.EventoGenerico;
 import clases.GestionMuseo;
 
 public class Listar {
@@ -117,12 +116,8 @@ public class Listar {
 	 *                'listarEventosGenericos()'
 	 */
 	public static void listarEventosGenericos(Scanner input, GestionMuseo gestion) {
-
 		System.out.println("    ------ Lista eventos genéricos ------");
-		for (EventoGenerico evento : gestion.getListaEventosGenericos()) {
-			System.out.println(evento.descripcionEvento());
-			System.out.println("-----------------------------------------------");
-		}
+		gestion.listarEventosGenericos();
 		System.out.println("Pulse enter para salir");
 		input.nextLine();
 	}

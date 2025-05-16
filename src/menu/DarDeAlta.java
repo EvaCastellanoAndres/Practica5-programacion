@@ -5,11 +5,17 @@ import clases.GestionMuseo;
 
 public class DarDeAlta {
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo Museo.
+	 * Método que busca y muestra un objeto de tipo Museo. Primero, el método
+	 * muestra la acción que va ha hacer junto con un pequeño menú con las opciones
+	 * de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú inicial
+	 * del programa, y si se escribe un 1 el método va pidiendo uno a uno los campos
+	 * necesarios para crear un Museo. En caso de escribir algún número que no sea
+	 * ni 1 ni 2, el método muestra un mensaje de error y pide que se introduzca 1
+	 * para continuar buscando un Museo o 2 para volver al menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar el nuevo Museo
+	 * @param gestion Objeto que se encarga de comprobar si existe un Museo y
+	 *                mostrar el objeto Museo deseado
 	 */
 	public static void altaMuseo(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
@@ -42,11 +48,17 @@ public class DarDeAlta {
 	}
 
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo Cuadro.
+	 * Método que busca y muestra un objeto de tipo Cuadro. Primero, el método
+	 * muestra la acción que va ha hacer junto con un pequeño menú con las opciones
+	 * de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú inicial
+	 * del programa, y si se escribe un 1 el método va pidiendo uno a uno los campos
+	 * necesarios para crear un Cuadro. En caso de escribir algún número que no sea
+	 * ni 1 ni 2, el método muestra un mensaje de error y pide que se introduzca 1
+	 * para continuar buscando un Cuadro o 2 para volver al menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar el nuevo Cuadro
+	 * @param gestion Objeto que se encarga de comprobar si existe un Cuadro y
+	 *                mostrar el objeto Cuadro deseado
 	 */
 	public static void altaCuadro(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
@@ -62,6 +74,7 @@ public class DarDeAlta {
 				String titulo = input.nextLine();
 				System.out.println("Escriba el siglo:");
 				int siglo = input.nextInt();
+				input.nextLine();
 				System.out.println("Escriba el estilo:");
 				String estilo = input.nextLine();
 				gestion.altaCuadro(titulo, siglo, estilo);
@@ -79,12 +92,17 @@ public class DarDeAlta {
 	}
 
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
-	 * Escultura.
+	 * Método que busca y muestra un objeto de tipo Escultura. Primero, el método
+	 * muestra la acción que va ha hacer junto con un pequeño menú con las opciones
+	 * de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú inicial
+	 * del programa, y si se escribe un 1 el método va pidiendo uno a uno los campos
+	 * necesarios para crear una Escultura. En caso de escribir algún número que no
+	 * sea ni 1 ni 2, el método muestra un mensaje de error y pide que se introduzca
+	 * 1 para continuar buscando un Escultura o 2 para volver al menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar la nueva Escultura
+	 * @param gestion Objeto que se encarga de comprobar si existe una Escultura y
+	 *                mostrar el objeto Escultura deseado
 	 */
 	public static void altaEscultura(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
@@ -117,12 +135,17 @@ public class DarDeAlta {
 	}
 
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
-	 * ObraDeArte.
+	 * Método que busca y muestra un objeto de tipo ObraDeArte. Primero, el método
+	 * muestra la acción que va ha hacer junto con un pequeño menú con las opciones
+	 * de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú inicial
+	 * del programa, y si se escribe un 1 el método va pidiendo uno a uno los campos
+	 * necesarios para crear una ObraDeArte. En caso de escribir algún número que no
+	 * sea ni 1 ni 2, el método muestra un mensaje de error y pide que se introduzca
+	 * 1 para continuar buscando un ObraDeArte o 2 para volver al menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar la nueva ObraDeArte
+	 * @param gestion Objeto que se encarga de comprobar si existe una ObraDeArte y
+	 *                mostrar el objeto ObraDeArte deseado
 	 */
 	public static void altaObraDeArte(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
@@ -153,12 +176,17 @@ public class DarDeAlta {
 	}
 
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
-	 * Empleado.
+	 * Método que busca y muestra un objeto de tipo Empleado. Primero, el método
+	 * muestra la acción que va ha hacer junto con un pequeño menú con las opciones
+	 * de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú inicial
+	 * del programa, y si se escribe un 1 el método va pidiendo uno a uno los campos
+	 * necesarios para crear un Empleado. En caso de escribir algún número que no
+	 * sea ni 1 ni 2, el método muestra un mensaje de error y pide que se introduzca
+	 * 1 para continuar buscando un Empleado o 2 para volver al menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar el nuevo Empleado
+	 * @param gestion Objeto que se encarga de comprobar si existe un Empleado y
+	 *                mostrar el objeto Empleado deseado
 	 */
 	public static void altaEmpleado(Scanner input, GestionMuseo gestion) {
 
@@ -196,11 +224,17 @@ public class DarDeAlta {
 	}
 
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo Evento.
+	 * Método que busca y muestra un objeto de tipo Evento. Primero, el método
+	 * muestra la acción que va ha hacer junto con un pequeño menú con las opciones
+	 * de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú inicial
+	 * del programa, y si se escribe un 1 el método va pidiendo uno a uno los campos
+	 * necesarios para crear un Evento. En caso de escribir algún número que no sea
+	 * ni 1 ni 2, el método muestra un mensaje de error y pide que se introduzca 1
+	 * para continuar buscando un Evento o 2 para volver al menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar el nuevo Evento
+	 * @param gestion Objeto que se encarga de comprobar si existe un Evento y
+	 *                mostrar el objeto Evento deseado
 	 */
 	public static void altaEvento(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
@@ -256,12 +290,18 @@ public class DarDeAlta {
 	}
 
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
-	 * EventoBenefico.
+	 * Método que busca y muestra un objeto de tipo EventoBenefico. Primero, el
+	 * método muestra la acción que va ha hacer junto con un pequeño menú con las
+	 * opciones de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú
+	 * inicial del programa, y si se escribe un 1 el método va pidiendo uno a uno
+	 * los campos necesarios para crear un EventoBenefico. En caso de escribir algún
+	 * número que no sea ni 1 ni 2, el método muestra un mensaje de error y pide que
+	 * se introduzca 1 para continuar buscando un EventoBenefico o 2 para volver al
+	 * menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar el nuevo EventoBenefico
+	 * @param gestion Objeto que se encarga de comprobar si existe un EventoBenefico
+	 *                y mostrar el objeto EventoBenefico deseado
 	 */
 	public static void altaEventoBenefico(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;
@@ -325,12 +365,18 @@ public class DarDeAlta {
 	}
 
 	/**
-	 * Método que muestra un pequeño menú de confirmación y tras recibir el valor
-	 * '1' pide uno a uno los datos necesarios para crear un objeto de tipo
-	 * EventoGenerico.
+	 * Método que busca y muestra un objeto de tipo EventoGenerico. Primero, el
+	 * método muestra la acción que va ha hacer junto con un pequeño menú con las
+	 * opciones de continuar o seguir. Si se escribe un 2 se manda de vuelta al menú
+	 * inicial del programa, y si se escribe un 1 el método va pidiendo uno a uno
+	 * los campos necesarios para crear un EventoGenerico. En caso de escribir algún
+	 * número que no sea ni 1 ni 2, el método muestra un mensaje de error y pide que
+	 * se introduzca 1 para continuar buscando un EventoGenerico o 2 para volver al
+	 * menú anterior.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
-	 * @param gestion Objeto que se encarga de registrar el nuevo EventoGenerico
+	 * @param gestion Objeto que se encarga de comprobar si existe un EventoGenerico
+	 *                y mostrar el objeto EventoGenerico deseado
 	 */
 	public static void altaEventoGenerico(Scanner input, GestionMuseo gestion) {
 		int confirmacion = 0;

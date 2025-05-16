@@ -89,7 +89,7 @@ public class GestionMuseo {
 
 	// ELIMINAR MUSEO
 	/**
-	 * Método que elimina un miseo concreto.
+	 * Método que elimina un museo concreto.
 	 * 
 	 * @param nombre Nombre del museo a eliminar
 	 */
@@ -484,7 +484,8 @@ public class GestionMuseo {
 
 	// ALTA EVENTO BENEFICO
 	/**
-	 * Método que da de alta un evento benéfico.
+	 * Método que da de alta un evento benéfico, tanto en su propio ArrayList de
+	 * EventoBenefico como en el general de Evento.
 	 * 
 	 * @param nombre          Nombre del evento
 	 * @param organizador     DNI del organizador
@@ -503,6 +504,8 @@ public class GestionMuseo {
 
 		listaEventosBeneficos.add(new EventoBenefico(nombre, buscarEmpleado(organizador), fechaInicioLD, fechaFinLD,
 				tema, devolverMuseo(museo), causa, metaRecaudacion, totalRecaudado));
+		listaEventos.add(
+				new Evento(nombre, buscarEmpleado(organizador), fechaInicioLD, fechaFinLD, tema, devolverMuseo(museo)));
 	}
 
 	// LISTAR EVENTOS BENEFICOS
@@ -565,7 +568,8 @@ public class GestionMuseo {
 
 	// ALTA EVENTO GENERICO
 	/**
-	 * Método que da de alta un evento genérico.
+	 * Método que da de alta un evento genérico, tanto en su propio ArrayList de
+	 * EventoGenerico como en el general de Evento.
 	 * 
 	 * @param nombre              Nombre del evento
 	 * @param organizador         DNI del organizador
@@ -581,8 +585,11 @@ public class GestionMuseo {
 			String museo, String tipo, String publicoObjetivo, boolean requiereInscripcion) {
 		LocalDate fechaInicioLD = LocalDate.parse(fechaInicio);
 		LocalDate fechaFinLD = LocalDate.parse(fechaFin);
+
 		listaEventosGenericos.add(new EventoGenerico(nombre, buscarEmpleado(organizador), fechaInicioLD, fechaFinLD,
 				tema, devolverMuseo(museo), tipo, publicoObjetivo, requiereInscripcion));
+		listaEventos.add(
+				new Evento(nombre, buscarEmpleado(organizador), fechaInicioLD, fechaFinLD, tema, devolverMuseo(museo)));
 	}
 
 	// LISTAR EVENTOS GENERICOS

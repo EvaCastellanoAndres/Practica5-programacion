@@ -71,8 +71,8 @@ public class Empleado {
 
 	@Override
 	public String toString() {
-		return "Empleado: \nnombre: " + nombre + ", apellidos: " + apellidos + ", dni: " + dni + ", sueldo: " + sueldo
-				+ ", museo: " + museo;
+		return nombre + " " + apellidos + "\nDNI: " + dni + "\nSueldo: " + sueldo
+				+ "€ \nTrabaja en: Museo " + museo.getNombre();
 	}
 
 }

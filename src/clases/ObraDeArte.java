@@ -39,9 +39,9 @@ public class ObraDeArte {
 	public String toString() {
 		if(siglo<0) {
 			siglo=siglo*-2+siglo;
-			return "Obra de arte: \nTítulo: " + titulo + ", siglo " + siglo+" a.C";
+			return "Título: " + titulo + "\nSiglo " + siglo+" a.C";
 		}else {
-			return "Obra de arte: \nTítulo: " + titulo + ", siglo " + siglo;
+			return "Título: " + titulo + "\nSiglo " + siglo;
 		}
 		
 	}

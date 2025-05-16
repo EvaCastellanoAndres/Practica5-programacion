@@ -29,6 +29,7 @@ public class ComprobarEstadoEvento {
 		}
 
 		int seleccion;
+		System.out.println();
 		do {
 			System.out.print("Escriba un número entre 1 y " + listaEventos.size() + ": ");
 			seleccion = input.nextInt();

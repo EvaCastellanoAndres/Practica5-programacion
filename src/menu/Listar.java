@@ -78,7 +78,7 @@ public class Listar {
 	}
 
 	/**
-	 * Lista todos los objetos de tipo Evento registrados. Con un pequeño título y
+	 * Lista todos los objetos de tipo Evento, EventoBenefico y EventoGenerico registrados. Con un pequeño título y
 	 * teniendo que pulsar enter para salir del listado.
 	 * 
 	 * @param input   Scanner que permite escribir por consola
@@ -107,8 +107,7 @@ public class Listar {
 	}
 
 	/**
-	 * Lista todos los objetos de tipo EventoGenerico registrados, llamando al
-	 * método propio de EventoGenerico 'descripcionEvento()'. Pide pulsar la tecla
+	 * Lista todos los objetos de tipo EventoGenerico registrados. Pide pulsar la tecla
 	 * enter para salir del listado.
 	 * 
 	 * @param input   Scanner que permite escribir por consola

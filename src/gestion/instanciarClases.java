@@ -1,7 +1,11 @@
 package gestion;
 
 import clases.GestionMuseo;
-
+/**
+ * 
+ * @author Eva Castellano
+ *
+ */
 public class InstanciarClases {
 	/**
 	 * Método que crea varios objetos de tipo Museo

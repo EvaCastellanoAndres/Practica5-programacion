@@ -13,7 +13,11 @@ import menu.ComprobarEstadoEvento;
 import menu.ComprobarDuracionEvento;
 import menu.AñadirDonacion;
 import menu.EstadoDonaciones;
-
+/**
+ * 
+ * @author Eva Castellano
+ *
+ */
 public class Programa {
 
 	public static void main(String[] args) {

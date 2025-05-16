@@ -172,6 +172,9 @@ public class Programa {
 			case "8":// Ver el estado de las donaciones de un evento benefico
 				EstadoDonaciones.mostrarEstado(input, gestion.getListaEventosBeneficos());
 				break;
+			case "9":
+				System.out.println("Adioooos :)");
+				break;
 			default:
 				System.out.println("- Opción no válida -");
 				System.out.println("Pulse enter para seguir");

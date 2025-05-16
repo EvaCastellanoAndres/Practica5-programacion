@@ -158,14 +158,6 @@ public class Programa {
 				Eliminar.eliminarEvento(input, gestion);
 				break;
 
-			case "4.7":// Eliminar evento benéfico
-				Eliminar.eliminarEventoBenefico(input, gestion);
-				break;
-
-			case "4.8":// Eliminar evento genérico
-				Eliminar.eliminarEventoGenerico(input, gestion);
-				break;
-
 			case "5":// Comprobar estado evento
 				ComprobarEstadoEvento.comprobarEstado(input, gestion.getListaEventos());
 				break;
@@ -181,7 +173,9 @@ public class Programa {
 				EstadoDonaciones.mostrarEstado(input, gestion.getListaEventosBeneficos());
 				break;
 			default:
-				System.out.println("Opción no válida");
+				System.out.println("- Opción no válida -");
+				System.out.println("Pulse enter para seguir");
+				input.nextLine();
 				break;
 			}
 		} while (!opcion.equals("9")); // 9 -> salir

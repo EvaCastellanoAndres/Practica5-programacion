@@ -36,6 +36,8 @@ public class DarDeAlta {
 				gestion.altaMuseo(nombre, aforo, precio);
 				System.out.println("* Se ha creado el museo con los datos introducidos *");
 				input.nextLine();
+				System.out.println("\nPulse enter para salir");
+				input.nextLine();
 				break;
 			} else if (confirmacion == 2) {
 				input.nextLine();
@@ -79,6 +81,7 @@ public class DarDeAlta {
 				String estilo = input.nextLine();
 				gestion.altaCuadro(titulo, siglo, estilo);
 				System.out.println("* Se ha creado el cuadro con los datos introducidos *");
+				System.out.println("\nPulse enter para salir");
 				input.nextLine();
 				break;
 			} else if (confirmacion == 2) {
@@ -119,9 +122,11 @@ public class DarDeAlta {
 				System.out.println("Escriba el siglo:");
 				int siglo = input.nextInt();
 				System.out.println("Escriba el material:");
+				input.nextLine();
 				String material = input.nextLine();
 				gestion.altaEscultura(titulo, siglo, material);
 				System.out.println("* Se ha creado el cuadro con los datos introducidos *");
+				System.out.println("\nPulse enter para salir");
 				input.nextLine();
 				break;
 			} else if (confirmacion == 2) {
@@ -163,6 +168,8 @@ public class DarDeAlta {
 				int siglo = input.nextInt();
 				gestion.altaObraDeArte(titulo, siglo);
 				System.out.println("* Se ha creado la obra de arte con los datos introducidos *");
+				input.nextLine();
+				System.out.println("\nPulse enter para salir");
 				input.nextLine();
 				break;
 			} else if (confirmacion == 2) {
@@ -207,11 +214,21 @@ public class DarDeAlta {
 				String dni = input.nextLine();
 				System.out.println("Escriba el sueldo:");
 				double sueldo = input.nextDouble();
-				System.out.println("Escriba el nombre del museo en el que trabaja:");
-				String museo = input.nextLine();
-				gestion.altaEmpleado(nombre, apellidos, dni, sueldo, museo);
-				System.out.println("* Se ha creado el empleado con los datos introducidos *");
 				input.nextLine();
+				String museo = "";
+				do {
+					System.out.println("Escriba el nombre del museo en el que trabaja:");
+					museo = input.nextLine();
+					if (gestion.existeMuseo(museo)) {
+						gestion.altaEmpleado(nombre, apellidos, dni, sueldo, museo);
+						System.out.println("* Se ha creado el empleado con los datos introducidos *");
+						System.out.println("\nPulse enter para salir");
+						input.nextLine();
+						break;
+					} else {
+						System.out.println("Error: El museo introducido no corresponde con ninguno registrado");
+					}
+				} while (!gestion.existeMuseo(museo));
 				break;
 			} else if (confirmacion == 2) {
 				input.nextLine();
@@ -266,6 +283,8 @@ public class DarDeAlta {
 							if (gestion.existeMuseo(museo)) {
 								gestion.altaEvento(nombre, dni, fechaI, fechaF, tema, museo);
 								System.out.println("* Se ha creado el evento con los datos introducidos *");
+								System.out.println("\nPulse enter para salir");
+								input.nextLine();
 								break;
 							} else {
 								System.out.println("Error: El museo introducido no corresponde con ninguno registrado");
@@ -340,6 +359,8 @@ public class DarDeAlta {
 								gestion.altaEventoBenefico(nombre, dni, fechaI, fechaF, tema, museo, causa, meta,
 										total);
 								System.out.println("* Se ha creado el evento benefico con los datos introducidos *");
+								System.out.println("\nPulse enter para salir");
+								input.nextLine();
 								input.nextLine();
 								break;
 							} else {
@@ -410,25 +431,24 @@ public class DarDeAlta {
 								String tipo = input.nextLine();
 								System.out.println("Escriba el publico objetivo:");
 								String publico = input.nextLine();
-
-								char inscripcion;
-								System.out.println("¿Requiere inscripción? (S/N)");
+								String inscripcion;
 								boolean booleano = false;
 								do {
-									inscripcion = input.nextLine().charAt(0);
-
-									if (inscripcion == 'S') {
+									System.out.println("¿Requiere inscripción? (S/N)");
+									inscripcion = input.nextLine();
+									if (inscripcion.equalsIgnoreCase("S")) {
 										booleano = true;
-									} else if (inscripcion == 'N') {
+									} else if (inscripcion.equalsIgnoreCase("N")) {
 										booleano = false;
 									} else {
 										System.out.println("Esciba 'S' para sí o 'N' para no");
 									}
-								} while (inscripcion != 'S' && inscripcion != 'N');
-
+								} while (!inscripcion.equalsIgnoreCase("S") && !inscripcion.equalsIgnoreCase("N"));
+								
 								gestion.altaEventoGenerico(nombre, dni, fechaI, fechaF, tema, museo, tipo, publico,
 										booleano);
 								System.out.println("* Se ha creado el evento genérico con los datos introducidos *");
+								System.out.println("\nPulse enter para salir");
 								input.nextLine();
 								break;
 							} else {

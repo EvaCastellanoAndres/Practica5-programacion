@@ -44,8 +44,6 @@ public class Menu {
 		System.out.println("    |- 4.4 -> Obra de Arte");
 		System.out.println("    |- 4.5 -> Empleado");
 		System.out.println("    |- 4.6 -> Evento");
-		System.out.println("    |- 4.7 -> Evento benéfico");
-		System.out.println("    |- 4.8 -> Evento genérico");
 		System.out.println();
 		System.out.println("  5 -> Comprobar estado de evento");
 		System.out.println();

@@ -214,7 +214,7 @@ public class InstanciarClases {
 		gestion.altaEventoGenerico("Taller de Grabado", "67890123G", // Isabel
 				"2025-10-08", "2025-10-10", "Técnicas de grabado", "Louvre", "Taller", "Adultos", true);
 
-		gestion.altaEventoGenerico("Charla: Arte como terapia", "78901234H", // Pedro
+		gestion.altaEventoGenerico("Arte como terapia", "78901234H", // Pedro
 				"2025-11-03", "2025-11-03", "Arte y bienestar", "de Arte Moderno", "Charla", "Adultos",
 				false);
 

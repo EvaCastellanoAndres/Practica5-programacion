@@ -54,18 +54,24 @@ public class EventoGenerico extends Evento {
 	 * Indica si el evento es adecuado para un determinado público.
 	 * 
 	 * @param tipoPublico El tipo de público a comprobar
-	 * @return true si el público coincide con el objetivo del evento, false si no coincida
+	 * @return true si el público coincide con el objetivo del evento, false si no
+	 *         coincida
 	 */
 	public boolean esAdecuadoPara(String tipoPublico) {
-	    return this.publicoObjetivo.equalsIgnoreCase(tipoPublico);
+		return this.publicoObjetivo.equalsIgnoreCase(tipoPublico);
 	}
-	
+
 	// ToSTRING
 
 	@Override
 	public String toString() {
-		return "Tipo: " + tipo + ", publicoObjetivo: " + publicoObjetivo + ", requiereInscripcion: "
-				+ requiereInscripcion + "\n" + super.toString();
+		String inscripcion;
+		if (requiereInscripcion) {
+			inscripcion = "- Requiere inscripción";
+		} else {
+			inscripcion = "- No requiere inscripción";
+		}
+		return super.toString() + "\nTipo: " + tipo + "\nPublico objetivo: " + publicoObjetivo + "\n" + inscripcion;
 	}
 
 }

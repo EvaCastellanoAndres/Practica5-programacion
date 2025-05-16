@@ -32,6 +32,10 @@ public class Programa {
 		InstanciarClases.crearEventosBeneficos(gestion);
 		InstanciarClases.crearEventosGenericos(gestion);
 		
+		System.out.println("\tOo----------------------------------------oO");
+		System.out.println("\t|  Bienvenidx a la mega gestión de museos  |");
+		System.out.println("\tOo----------------------------------------oO");
+		
 		String opcion;
 		do {
 			Menu.menu();
